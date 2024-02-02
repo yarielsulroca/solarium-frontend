@@ -4,7 +4,7 @@ import IntroText from '../components/IntroText';
 
 const Contactanos = () => {
     return (
-        <div id='contactanos' className='mx-4'>
+        <div id='contactanos' className='mx-4'  style={{ marginBottom:'0px'}}>
             <IntroText name='contactanos' />
             <MyForm />
         </div>

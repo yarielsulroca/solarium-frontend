@@ -7,4 +7,4 @@ export { default as MyForm } from "./MyForm";
 export { default as Footer } from "./Footer";
 export { default as AppRoutes } from "./AppRoutes";
 export {default as NegocioTable} from "./NegocioTable";
-
+export {default as TextHeader} from "./TextHeader";

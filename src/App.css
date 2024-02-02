@@ -111,9 +111,8 @@ a:visited {
 }
 /* accordion css */
 
-.Container.h2 {
-  color: color-third;
-  align-items: center;
+.Container {
+  margin-top: 20px;
 }
 .h2 {
   text-align: center;

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import MyCard from './MyCard';
 
+
 const RenderCards = () => {
     const [ data, setData ] = useState( [] );
 
@@ -16,12 +17,11 @@ const RenderCards = () => {
             } );
     }, [] );
     return (
-
-        <div className=" d-flex flex-wrap justify-content-center gap-3 ">
-            { data.map( (item) => (
-                <MyCard key={ item.id } titulo={ item.titulo } descripcion={ item.descripcion }/>
-            ) ) }
-
+        <div className=" d-flex flex-wrap justify-content-center gap-3"
+        style={{ marginBottom:'100px'}}>
+                    {data.map( (item) => (
+                        <MyCard key={ item.id } titulo={ item.titulo } descripcion={ item.descripcion }/>
+                    ))}
         </div>
 
     );

@@ -1,11 +1,11 @@
 import React from 'react';
-import IntroText from '../components/IntroText';
+import { TextHeader } from '../components';
 import RenderCard from '../components/Cards/RenderCards';
 
 const Promotion = () => {
     return (
-        <div id='promociones' className='mx-4'>
-        <IntroText name='promociones' />
+        <div id='promociones' className='mx-4' style={{ marginTop:'100px'}}>
+        <TextHeader text="Promociones"/>
         <RenderCard/>
 
         </div>

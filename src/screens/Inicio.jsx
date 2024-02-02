@@ -6,7 +6,7 @@ import {Container} from 'react-bootstrap';
 
 const Inicio = () => {
     return (
-        <Container>
+        <Container  style={{ marginTop:'100px !important' }}>
             <IntroText name='inicio' />
             <Slide/>
         </Container>

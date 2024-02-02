@@ -19,17 +19,12 @@ const RenderAccordions = () => {
     }, [] );
 
     return (
-        <Container className='border'>
-        <Row>
-        <Col xs={12}>
-            <h2 style={{ textAlign: 'center', color: 'blue' }}>Información Sobre los Establecimientos</h2>
-        </Col>
-        </Row>
+        <Container>
         <Row>
         <Col xs={12} lg={{ span: 6, offset: 3 }} className="text-center">
             <Accordion defaultActiveKey="0" flush>
             {data.map((item) => (
-                <MyAccordion 
+                <MyAccordion
                 key={item.id}
                 eventKey={(item.id - 1).toString()}
                 name={item.name}

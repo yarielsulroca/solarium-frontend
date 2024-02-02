@@ -5,37 +5,28 @@ import { motion } from "framer-motion";
 import GoogleMapRedirect from './GoogleMapRedirect';
 
 const MyAccordion = ({ eventKey, name, adresse, phone }) => {
-const [isActive, setIsActive] = useState(false);
-const [hovered, setHovered] = useState(false);
+const [isActive, setIsActive] = useState("false");
 
 const toggleAccordion = () => {
     setIsActive(!isActive);
 };
 
-const handleMouseEnter = () => {
-    setHovered(true);
-};
-
-const handleMouseLeave = () => {
-    setHovered(false);
-};
-
 return (
+
     <Accordion.Item
     eventKey={eventKey}
     onClick={toggleAccordion}
     active={isActive}
-    onMouseEnter={handleMouseEnter}
-    onMouseLeave={handleMouseLeave}
     className={`accordion-item ${isActive ? 'active' : ''}`}
     >
     <Accordion.Header>
         {name}
     </Accordion.Header>
     <Accordion.Body>
-    <Card border='danger' className="border border-1" style={{ width: '25rem' }}>
+    <Card border='danger border-4' style={{ width: '25rem' }}>
     <motion.div>
-    <Card.Img variant="top" src="/img/solatium_icono.png" />
+    <Card.Img variant="top" src="/img/solatium_icono.png" style={{ width: '40%', height: 'auto' }}
+/>
     </motion.div>
         <Card.Body>
         <Card.Text>

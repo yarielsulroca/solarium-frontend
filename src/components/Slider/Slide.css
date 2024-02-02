@@ -1,0 +1,45 @@
+.slide-caption {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s, color 0.5s; /* Agregamos la propiedad color a la animación */
+    text-align: center;
+    cursor: pointer;
+}
+
+.slide-caption.active {
+    opacity: 1;
+    transform: translateY(0);
+    color: #ffffff; /* Color inicial de los enunciados */
+}
+
+.slide-caption:hover {
+    transform: scale(1.1);
+}
+
+  /* Animación de cambio de color al rotar el carrusel */
+@keyframes changeColor {
+    0% {
+      color: #ffffff; /* Color inicial */
+    }
+    33% {
+      color: #ffae00; /* Primer color de cambio */
+    }
+    66% {
+      color: #00ff00; /* Segundo color de cambio */
+    }
+    100% {
+      color: #e100ff; /* Tercer color de cambio */
+    }
+}
+
+.slide-caption:nth-child(1) {
+    animation: changeColor 9s infinite; /* Aplicamos la animación a cada enunciado */
+}
+
+.slide-caption:nth-child(2) {
+    animation: changeColor 9s infinite 3s; /* Retrasamos la animación del segundo enunciado */
+}
+
+.slide-caption:nth-child(3) {
+    animation: changeColor 9s infinite 6s; /* Retrasamos la animación del tercer enunciado */
+}

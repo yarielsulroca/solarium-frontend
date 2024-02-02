@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Row, Col } from 'react-bootstrap';
+import axios from 'axios';
 
 const MyForm = () => {
   const [email, setEmail] = useState('');
@@ -8,22 +9,47 @@ const MyForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Aquí puedes enviar los datos al back-end utilizando fetch u otra librería para hacer peticiones HTTP
+    e.preventDefault();
+
+    const data = {
+      email: email,
+      subject: subject,
+      text: message
+    };
+
+    try {
+      const response = axios.post('https://127.0.0.1/api/contactanos', data);
+
+      if (response.status === 200) {
+        // El correo se envió correctamente
+        console.log('Correo enviado exitosamente');
+      } else {
+        // Hubo un error al enviar el correo
+        console.error('Error al enviar el correo');
+      }
+    } catch (error) {
+      console.error('Error al enviar el correo:', error);
+    }
   };
 
   return (
-    <div className="mg-4">
-        <h2 className='bg-primary'>Formulario Para Encio de Correos</h2>
-        <br /><br />
+      <div className='' style={{ marginTop:'100px' }}>
+        <Row>
+        <Col xs={12}>
+            <h2 style={{ textAlign: 'center', color: 'blue' }}>Contactanos!!</h2>
+        </Col>
+        </Row>
+        <Row >
+          <Col className='border border-primary'xs={12} lg={{ span: 6, offset: 3 }} >
         <Form onSubmit={handleSubmit}>
       <Form.Group controlId="formBasicEmail">
         <Form.Label>Dirección de Correo</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" value={email} onChange={(e) => setEmail(e.target.value)} />
+        <Form.Control type="email" placeholder="Su direccion de correo" value={email} onChange={(e) => setEmail(e.target.value)} />
       </Form.Group>
 
       <Form.Group controlId="formBasicSubject">
         <Form.Label>Asunto: </Form.Label>
-        <Form.Control type="text" placeholder="Subject" value={subject} onChange={(e) => setSubject(e.target.value)} />
+        <Form.Control type="text" placeholder="Asunto" value={subject} onChange={(e) => setSubject(e.target.value)} />
       </Form.Group>
 
       <Form.Group controlId="formBasicMessage">
@@ -32,9 +58,11 @@ const MyForm = () => {
       </Form.Group>
 
       <Button variant="primary" type="submit">
-        Send Email
+        Enviar Mensaje
       </Button>
     </Form>
+          </Col>
+        </Row>
     </div>
   );
 };
