@@ -9,7 +9,7 @@ const RenderAccordions = () => {
 
     useEffect( () => {
 
-        axios.get( 'https://127.0.0.1/solarium-app/api-app/public/api/negocio' )
+        axios.get( 'https://sulroca.getthost.com/api/negocio' )
             .then( response => {
                 setData( response.data );
             } )
